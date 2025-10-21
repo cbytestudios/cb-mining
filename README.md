@@ -28,29 +28,27 @@ The `cb-mining` resource implements a sophisticated mining system for the RSG Fr
    - Configure the lantern helmet settings (fuel item, duration, light properties) in `config.lua`.
 
 3. **Items for rsg-inventory**:
-   - Add the following items to your `rsg-inventory` items table (typically in the database or inventory configuration file):
-     ```json
-     [
-         {"name": "pickaxe", "label": "Pickaxe", "weight": 2.0, "type": "item", "description": "A tool for mining rocks."},
-         {"name": "dynamite", "label": "Dynamite", "weight": 0.5, "type": "item", "description": "Explosive for mining."},
-         {"name": "goldpan", "label": "Gold Pan", "weight": 1.0, "type": "item", "description": "A pan for gold panning in rivers."},
-         {"name": "prospector_tool", "label": "Prospector Tool", "weight": 1.5, "type": "item", "description": "A tool for surveying minerals."},
-         {"name": "lantern_helmet", "label": "Lantern Helmet", "weight": 1.0, "type": "item", "description": "A helmet with a fueled lantern for illumination."},
-         {"name": "lamp_oil", "label": "Lamp Oil", "weight": 0.3, "type": "item", "description": "Fuel for the lantern helmet."},
-         {"name": "stone", "label": "Stone", "weight": 0.5, "type": "item", "description": "Raw stone from mining."},
-         {"name": "iron_ore", "label": "Iron Ore", "weight": 0.7, "type": "item", "description": "Raw iron ore from mining."},
-         {"name": "coal", "label": "Coal", "weight": 0.4, "type": "item", "description": "Coal used as fuel or from mining."},
-         {"name": "gold_nugget", "label": "Gold Nugget", "weight": 0.2, "type": "item", "description": "A small gold nugget."},
-         {"name": "gold_dust", "label": "Gold Dust", "weight": 0.1, "type": "item", "description": "Fine gold dust from panning."},
-         {"name": "small_nugget", "label": "Small Nugget", "weight": 0.15, "type": "item", "description": "A small gold nugget from panning."},
-         {"name": "large_gold_nugget", "label": "Large Gold Nugget", "weight": 0.3, "type": "item", "description": "A rare large gold nugget."},
-         {"name": "mineral_sample", "label": "Mineral Sample", "weight": 0.3, "type": "item", "description": "A sample from prospecting."},
-         {"name": "rare_mineral", "label": "Rare Mineral", "weight": 0.2, "type": "item", "description": "A rare mineral from prospecting."},
-         {"name": "diamond", "label": "Diamond", "weight": 0.1, "type": "item", "description": "A rare diamond from prospecting."},
-         {"name": "iron_ingot", "label": "Iron Ingot", "weight": 1.0, "type": "item", "description": "Smelted iron ingot."},
-         {"name": "gold_bar", "label": "Gold Bar", "weight": 1.2, "type": "item", "description": "Smelted gold bar."},
-         {"name": "rare_gem", "label": "Rare Gem", "weight": 0.1, "type": "item", "description": "A rare gem found during mining."}
-     ]
+   - Add the following items to your `rsg-inventory` file:
+     ```lua
+     pickaxe = { name = 'pickaxe', label = 'Pickaxe', weight = 2.0, type = 'item', image = 'pickaxe.png', unique = false, useable = true, shouldClose = true, description = 'A tool for mining rocks' },
+     dynamite = { name = 'dynamite', label = 'Dynamite', weight = 0.5, type = 'item', image = 'dynamite.png', unique = false, useable = true, shouldClose = true, description = 'Explosive for mining' },
+     goldpan = { name = 'goldpan', label = 'Gold Pan', weight = 1.0, type = 'item', image = 'goldpan.png', unique = false, useable = true, shouldClose = true, description = 'A pan for gold panning in rivers' },
+     prospector_tool = { name = 'prospector_tool', label = 'Prospector Tool', weight = 1.5, type = 'item', image = 'prospector_tool.png', unique = false, useable = true, shouldClose = true, description = 'A tool for surveying minerals' },
+     lantern_helmet = { name = 'lantern_helmet', label = 'Lantern Helmet', weight = 1.0, type = 'item', image = 'lantern_helmet.png', unique = false, useable = true, shouldClose = true, description = 'A helmet with a fueled lantern for illumination' },
+     lamp_oil = { name = 'lamp_oil', label = 'Lamp Oil', weight = 0.3, type = 'item', image = 'lamp_oil.png', unique = false, useable = true, shouldClose = true, description = 'Fuel for the lantern helmet' },
+     stone = { name = 'stone', label = 'Stone', weight = 0.5, type = 'item', image = 'stone.png', unique = false, useable = false, shouldClose = true, description = 'Raw stone from mining' },
+     iron_ore = { name = 'iron_ore', label = 'Iron Ore', weight = 0.7, type = 'item', image = 'iron_ore.png', unique = false, useable = false, shouldClose = true, description = 'Raw iron ore from mining' },
+     coal = { name = 'coal', label = 'Coal', weight = 0.4, type = 'item', image = 'coal.png', unique = false, useable = false, shouldClose = true, description = 'Coal used as fuel or from mining' },
+     gold_nugget = { name = 'gold_nugget', label = 'Gold Nugget', weight = 0.2, type = 'item', image = 'gold_nugget.png', unique = false, useable = false, shouldClose = true, description = 'A small gold nugget' },
+     gold_dust = { name = 'gold_dust', label = 'Gold Dust', weight = 0.1, type = 'item', image = 'gold_dust.png', unique = false, useable = false, shouldClose = true, description = 'Fine gold dust from panning' },
+     small_nugget = { name = 'small_nugget', label = 'Small Nugget', weight = 0.15, type = 'item', image = 'small_nugget.png', unique = false, useable = false, shouldClose = true, description = 'A small gold nugget from panning' },
+     large_gold_nugget = { name = 'large_gold_nugget', label = 'Large Gold Nugget', weight = 0.3, type = 'item', image = 'large_gold_nugget.png', unique = false, useable = false, shouldClose = true, description = 'A rare large gold nugget' },
+     mineral_sample = { name = 'mineral_sample', label = 'Mineral Sample', weight = 0.3, type = 'item', image = 'mineral_sample.png', unique = false, useable = false, shouldClose = true, description = 'A sample from prospecting' },
+     rare_mineral = { name = 'rare_mineral', label = 'Rare Mineral', weight = 0.2, type = 'item', image = 'rare_mineral.png', unique = false, useable = false, shouldClose = true, description = 'A rare mineral from prospecting' },
+     diamond = { name = 'diamond', label = 'Diamond', weight = 0.1, type = 'item', image = 'diamond.png', unique = false, useable = false, shouldClose = true, description = 'A rare diamond from prospecting' },
+     iron_ingot = { name = 'iron_ingot', label = 'Iron Ingot', weight = 1.0, type = 'item', image = 'iron_ingot.png', unique = false, useable = false, shouldClose = true, description = 'Smelted iron ingot' },
+     gold_bar = { name = 'gold_bar', label = 'Gold Bar', weight = 1.2, type = 'item', image = 'gold_bar.png', unique = false, useable = false, shouldClose = true, description = 'Smelted gold bar' },
+     rare_gem = { name = 'rare_gem', label = 'Rare Gem', weight = 0.1, type = 'item', image = 'rare_gem.png', unique = false, useable = false, shouldClose = true, description = 'A rare gem found during mining' }
      ```
    - Ensure these items are added to the `items` table or inventory configuration as per your `rsg-inventory` setup.
 
