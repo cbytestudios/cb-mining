@@ -7,17 +7,18 @@ description 'Sophisticated Mining Script for RSG Framework'
 version '1.0.0'
 
 shared_scripts {
-    'config.lua',
-    '@ox_lib/init.lua' 
+     '@ox_lib/init.lua' ,
+    'config.lua'
+   
 }
 
 client_scripts {
-    'client/main.lua'
+    'client/main.lua',
 }
 
 server_scripts {
     'server/main.lua',
-    'server/version.lua'
+    'server/version.lua',
 }
 
 dependencies {
