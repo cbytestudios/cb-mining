@@ -1,6 +1,6 @@
 local resourceName = 'cb-mining'
 local currentVersion = GetResourceMetadata(resourceName, 'version', 0)
-local versionUrl = 'https://raw.githubusercontent.com/cbytestudios/cb-mining/main/cb-mining/version.txt'
+local versionUrl = 'https://raw.githubusercontent.com/cbytestudios/cb-mining/main/version.txt'
 
 Citizen.CreateThread(function()
     PerformHttpRequest(versionUrl, function(statusCode, response, headers)

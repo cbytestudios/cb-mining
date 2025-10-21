@@ -2,14 +2,14 @@
 Config = {}
 
 -- Enable skill system integration
-Config.UseSkills = true
+Config.UseSkills = false
 
 -- Mining Types and Locations
 Config.MiningSpots = {
     {
         type = 'rock_pickaxe',
-        coords = vector3(-593.0, 2040.0, 323.0),
-        size = vector3(2.0, 2.0, 2.0),
+        coords = vector3(-612.322, 2047.9149, 302.57754),
+    size = vector3(6.0, 6.0, 6.0),
         rotation = 0,
         requiredItem = 'pickaxe',
         rewards = {
@@ -170,3 +170,13 @@ Config.LightOffset = vector3(0.0, 0.2, 0.0)
 -- General Settings
 Config.ProgressTime = 10000
 Config.Notify = function(msg) exports.ox_lib:notify({description = msg, type = 'inform'}) end
+
+-- Animations (configurable)
+Config.Animations = {
+    -- pickaxe: can be either a scenario string, or a dict/clip table
+    -- Examples:
+    -- { scenario = 'WORLD_HUMAN_CROUCH_INSPECT' }
+    -- or
+    -- { dict = 'mech_pickaxe@wall@speed_normal', clip = 'base' }
+    pickaxe = { scenario = 'WORLD_HUMAN_CROUCH_INSPECT' }
+}
